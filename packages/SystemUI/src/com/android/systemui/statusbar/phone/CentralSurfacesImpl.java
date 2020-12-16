@@ -3735,8 +3735,7 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces {
         mScrimController.setExpansionAffectsAlpha(!unlocking);
 
         boolean launchingAffordanceWithPreview = mLaunchingAffordance;
-        mScrimController.setLaunchingAffordanceWithPreview(launchingAffordanceWithPreview
-                || mBiometricUnlockController.isWakeAndUnlock());
+        mScrimController.setLaunchingAffordanceWithPreview(true);
 
         if (mStatusBarKeyguardViewManager.isShowingAlternateBouncer()) {
             if (mState == StatusBarState.SHADE || mState == StatusBarState.SHADE_LOCKED
