@@ -922,9 +922,6 @@ public class ScreenshotController {
      * failure).
      */
     private void saveScreenshotAndToast(UserHandle owner, Consumer<Uri> finisher) {
-        // Play the shutter sound to notify that we've taken a screenshot
-        playCameraSound();
-
         saveScreenshotInWorkerThread(
                 owner,
                 /* onComplete */ finisher,
@@ -956,9 +953,6 @@ public class ScreenshotController {
 
         mScreenshotAnimation =
                 mScreenshotView.createScreenshotDropInAnimation(screenRect, showFlash);
-
-        // Play the shutter sound to notify that we've taken a screenshot
-        playCameraSound();
 
         if (DEBUG_ANIM) {
             Log.d(TAG, "starting post-screenshot animation");
